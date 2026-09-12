@@ -1,0 +1,62 @@
+name: AI Job Agent Daily
+
+on:
+  schedule:
+    # ~8:00 AM America/New_York (13:00 UTC during EST)
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+jobs:
+  search-and-export:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Restore jobs database cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            jobs.db
+            reports/ai_job_matches.xlsx
+          key: job-agent-data-${{ github.repository }}-${{ github.run_id }}
+          restore-keys: |
+            job-agent-data-${{ github.repository }}-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Run job agent
+        run: python -m job_agent run
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: job-agent-${{ github.run_id }}
+          path: |
+            reports/
+            logs/job_agent.log
+            jobs.db
+          retention-days: 30
+
+      - name: Save persistent data
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: |
+            jobs.db
+            reports/ai_job_matches.xlsx
+          key: job-agent-data-${{ github.repository }}-${{ github.run_id }}

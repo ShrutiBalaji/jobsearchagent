@@ -1,0 +1,234 @@
+# Candidate profile keywords for scoring
+
+target_roles:
+  - AI Engineer
+  - Machine Learning Engineer
+  - ML Engineer
+  - Data Scientist
+  - Senior Data Scientist
+  - Applied Data Scientist
+  - Data Analyst
+  - Analytics Engineer
+  - Quantitative Analyst
+  - Quant Analyst
+  - AI Analyst
+  - ML Analyst
+  - Research Scientist
+  - Applied AI Engineer
+  - Applied ML Engineer
+  - ML Software Engineer
+  - Software Engineer, AI/ML
+  - Software Engineer, Machine Learning
+  - Computer Vision Engineer
+  - ML Systems Engineer
+  - ML Infrastructure Engineer
+  - AI Infrastructure Engineer
+  - ML Platform Engineer
+  - ML Inference Engineer
+  - GenAI Engineer
+  - LLM Engineer
+  - Multimodal AI Engineer
+  - AI/ML Engineer
+  - Healthcare AI Engineer
+  - Medical AI Engineer
+  - Applied Scientist
+
+role_keywords:
+  - ai engineer
+  - ml engineer
+  - machine learning engineer
+  - machine learning
+  - data scientist
+  - data science
+  - data analyst
+  - analytics engineer
+  - quantitative analyst
+  - quant analyst
+  - ai analyst
+  - ml analyst
+  - artificial intelligence
+  - computer vision
+  - deep learning
+  - llm
+  - genai
+  - generative ai
+  - multimodal
+  - ml systems
+  - ml infrastructure
+  - ml platform
+  - inference
+  - model serving
+  - healthcare ai
+  - medical ai
+  - medical imaging
+  - applied scientist
+  - research engineer
+  - predictive modeling
+  - statistical modeling
+
+excluded_role_keywords:
+  - business analyst
+  - product manager
+  - project manager
+  - presales
+  - pre-sales
+  - customer engineer
+  - sales engineer
+  - solutions engineer
+  - sales
+  - marketing
+  - recruiter
+  - hr
+  - qa engineer
+  - test engineer
+  - it support
+  - help desk
+  - intern
+  - internship
+  - phd required
+  - postdoctoral
+  - faculty
+  - professor
+
+technical_stack:
+  - python
+  - pytorch
+  - tensorflow
+  - cuda
+  - monai
+  - hugging face
+  - transformers
+  - llm
+  - genai
+  - multimodal
+  - computer vision
+  - dicom
+  - medical imaging
+  - segmentation
+  - object detection
+  - faster r-cnn
+  - resnet
+  - yolo
+  - bounding box
+  - fastapi
+  - django
+  - streamlit
+  - rest api
+  - distributed systems
+  - asynchronous
+  - redis
+  - docker
+  - kubernetes
+  - aws
+  - sagemaker
+  - gcp
+  - postgresql
+  - mysql
+  - mongodb
+  - github actions
+  - ci/cd
+  - linux
+  - ml inference
+  - model serving
+  - rag
+  - vector database
+  - faiss
+  - pinecone
+  - weaviate
+  - langchain
+  - autogen
+  - crewai
+  - agentic
+
+production_ai:
+  - production
+  - deployed
+  - end-to-end
+  - platform
+  - pipeline
+  - inference
+  - serving
+  - mlops
+  - deployment
+  - scalable
+  - distributed
+  - gpu
+
+medical_ai:
+  - dicom
+  - medical imaging
+  - healthcare
+  - radiology
+  - pathology
+  - clinical
+  - pacs
+  - nifti
+  - segmentation
+  - diagnostic
+  - mammography
+  - mg modality
+  - tumor detection
+  - ohif
+  - 3d slicer
+
+llm_genai:
+  - llm
+  - large language model
+  - genai
+  - generative ai
+  - multimodal
+  - rag
+  - fine-tuning
+  - finetuning
+  - lora
+  - peft
+  - transformers
+  - prompt
+  - langchain
+  - embedding
+  - openai
+  - tts
+  - text-to-speech
+  - audio model
+  - voice
+  - agentic
+  - multi-agent
+
+systems_infra:
+  - distributed
+  - asynchronous
+  - redis
+  - kafka
+  - kubernetes
+  - docker
+  - cloud
+  - infrastructure
+  - platform
+  - api
+  - microservices
+  - cuda
+  - gpu
+
+senior_indicators:
+  - senior
+  - staff
+  - principal
+  - lead
+  - director
+  - manager
+
+flexibility_indicators:
+  - or equivalent
+  - equivalent experience
+  - years preferred
+  - open to
+  - 1-3 years
+  - 2-4 years
+  - 2-5 years
+  - 3-5 years
+  - 3-6 years
+  - 4-6 years
+  - 5-7 years
+  - 5+ years
+  - 3+ years
+  - 4+ years

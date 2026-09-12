@@ -1,0 +1,74 @@
+# AI Job Agent — global settings
+
+salary_threshold: 100000
+salary_currency: USD
+minimum_match_score: 70
+
+# Job type preferences
+prefer_full_time: true
+exclude_job_types:
+  - internship
+  - part-time
+  - part time
+  - contract
+  - temporary
+  - volunteer
+  - unpaid
+  - freelance
+
+# Geographic priorities (used for scoring boost, not hard filter)
+location_priorities:
+  - New York
+  - NYC
+  - New York City
+  - Brooklyn
+  - Manhattan
+  - Boston
+  - Cambridge
+  - San Francisco
+  - Bay Area
+  - Palo Alto
+  - Mountain View
+  - Seattle
+  - Remote
+  - US Remote
+  - United States Remote
+  - Philadelphia
+  - Austin
+  - Los Angeles
+
+remote_preference: hybrid_or_remote_ok  # remote, hybrid, onsite, any
+
+# Search behavior
+discovery_enabled: true
+max_job_age_days: 7  # only include jobs posted within the last N days
+require_posting_date: true  # exclude jobs with unknown posting date
+max_jobs_per_company: 200
+request_timeout_seconds: 30
+request_retries: 3
+rate_limit_delay_seconds: 0.5
+
+# Email defaults (override via .env)
+email_to: shrutibalaji17@gmail.com
+
+# Report settings
+report_dir: reports
+excel_path: reports/ai_job_matches.xlsx
+log_dir: logs
+database_path: jobs.db
+
+# Company priority tiers for sorting
+# A = dream, B = high-value, C = strong-fit, D = other/discovered
+default_company_priority: D
+
+# Candidate experience profile (used for scoring fit against job requirements)
+# ~5 years AI/ML: ML research intern (2021–2023), medical CV research (2023–2025),
+# AI Engineer roles (2025–present), plus MS Data Science (UMass Dartmouth).
+candidate_years_experience: 5
+max_preferred_years: 5  # upper bound on job year requirements still considered a good fit
+max_allowed_job_years: 5  # hard exclude jobs requiring more than this many years
+reject_senior_unless_flexible: true
+
+# Compensation unknown handling — allow through when match score >= minimum_match_score
+include_unknown_compensation_if_excellent: true
+excellent_match_threshold: 70

@@ -1,0 +1,77 @@
+# Shruti Balaji — candidate profile used for LLM scoring and documentation.
+# Keep in sync with resume when updating experience.
+
+summary: |
+  AI Engineer with ~5 years of AI/ML experience across healthcare, medical imaging,
+  audio/LLM, fintech, and academic research. MS Data Science (UMass Dartmouth).
+  Mid-level candidate — not a new grad or 1-year engineer.
+
+experience_years: 5
+
+industries:
+  - healthcare / medical imaging
+  - production AI platforms
+  - audio AI / TTS / LLM fine-tuning
+  - financial data streaming
+  - offshore wind / business analytics
+  - academic research
+
+highlights:
+  - End-to-end production AI platform for DICOM medical imaging workflows on distributed multi-server architecture
+  - LLM fine-tuning (LoRA/PEFT) for billion-parameter TTS/audio pipelines with CUDA/PyTorch
+  - Computer vision: Faster R-CNN, ResNet50, YOLO for tumor detection and breast cancer screening on DICOM/MG
+  - GenAI/RAG: LangChain, OpenAI embeddings, FAISS vector DB, GPT-4 course recommendation chatbot
+  - Distributed data pipelines: Kafka producer-consumer, AWS Glue/Athena/S3, real-time financial streaming
+  - Full-stack AI: Django, Streamlit, FastAPI, Docker, PostgreSQL, MongoDB
+
+core_skills:
+  - Python
+  - NumPy
+  - Pandas
+  - Scikit-learn
+  - PyTorch
+  - TensorFlow
+  - TorchVision
+  - CUDA
+  - Hugging Face
+  - Transformers
+  - LangChain
+  - RAG
+  - LoRA
+  - PEFT
+  - FAISS
+  - computer vision
+  - Faster R-CNN
+  - ResNet
+  - YOLO
+  - DICOM
+  - medical imaging
+  - Kafka
+  - AWS
+  - SageMaker
+  - Glue
+  - Athena
+  - S3
+  - Docker
+  - FastAPI
+  - Django
+  - Streamlit
+  - PostgreSQL
+  - MySQL
+  - MongoDB
+  - distributed systems
+  - agentic AI
+  - AutoGen
+  - CrewAI
+  - NLP
+  - time series forecasting
+  - ARIMA
+  - Tableau
+  - React
+  - JavaScript
+  - Git
+  - Linux
+  - SQL
+  - ETL
+
+target_level: mid-level  # suitable for roles requiring 3-7 years

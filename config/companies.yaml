@@ -1,0 +1,432 @@
+# Company database — add/remove companies here
+# priority: A=dream, B=high-value, C=strong-fit, D=other/discovered
+# ats: greenhouse | lever | ashby | smartrecruiters | workday | company_page
+
+excluded_companies: []
+
+companies:
+  # --- FRONTIER AI / GENAI ---
+  - name: OpenAI
+    priority: A
+    category: frontier_ai
+    ats: ashby
+    org_slug: openai
+
+  - name: Anthropic
+    priority: A
+    category: frontier_ai
+    ats: greenhouse
+    board_token: anthropic
+
+  - name: xAI
+    priority: A
+    category: frontier_ai
+    ats: greenhouse
+    board_token: xai
+
+  - name: Scale AI
+    priority: A
+    category: frontier_ai
+    ats: greenhouse
+    board_token: scaleai
+
+  - name: Databricks
+    priority: A
+    category: frontier_ai
+    ats: greenhouse
+    board_token: databricks
+
+  - name: Hugging Face
+    priority: A
+    category: frontier_ai
+    ats: workable
+    board_token: huggingface
+
+  - name: Perplexity
+    priority: A
+    category: frontier_ai
+    ats: ashby
+    org_slug: perplexity
+
+  - name: Cohere
+    priority: A
+    category: frontier_ai
+    ats: ashby
+    org_slug: cohere
+
+  - name: Mistral AI
+    priority: A
+    category: frontier_ai
+    ats: lever
+    company_slug: mistral
+
+  - name: Together AI
+    priority: A
+    category: frontier_ai
+    ats: greenhouse
+    board_token: togetherai
+
+  - name: Cursor
+    priority: A
+    category: frontier_ai
+    ats: ashby
+    org_slug: cursor
+
+  - name: Weights & Biases
+    priority: B
+    category: frontier_ai
+    ats: company_page
+    careers_url: https://wandb.ai/careers
+
+  - name: NVIDIA
+    priority: A
+    category: frontier_ai
+    ats: workday
+    careers_url: https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite
+
+  # --- BIG TECH ---
+  - name: Google
+    priority: A
+    category: big_tech
+    ats: company_page
+    careers_url: https://careers.google.com/jobs/results/?q=machine%20learning%20engineer
+
+  - name: Microsoft
+    priority: A
+    category: big_tech
+    ats: company_page
+    careers_url: https://careers.microsoft.com/us/en/search-results?keywords=machine%20learning
+
+  - name: Amazon
+    priority: A
+    category: big_tech
+    ats: company_page
+    careers_url: https://www.amazon.jobs/en/search?base_query=machine+learning+engineer
+
+  - name: Apple
+    priority: A
+    category: big_tech
+    ats: company_page
+    careers_url: https://jobs.apple.com/en-us/search?search=machine%20learning
+
+  - name: Meta
+    priority: A
+    category: big_tech
+    ats: company_page
+    careers_url: https://www.metacareers.com/jobs?q=machine%20learning
+
+  - name: IBM
+    priority: B
+    category: big_tech
+    ats: company_page
+    careers_url: https://www.ibm.com/careers/search?field_keyword_08%5B0%5D=Artificial%20Intelligence
+
+  - name: Oracle
+    priority: B
+    category: big_tech
+    ats: company_page
+    careers_url: https://careers.oracle.com/jobs/?keyword=machine%20learning
+
+  - name: Salesforce
+    priority: B
+    category: big_tech
+    ats: company_page
+    careers_url: https://careers.salesforce.com/en/jobs/?search=machine%20learning
+
+  - name: Adobe
+    priority: B
+    category: big_tech
+    ats: company_page
+    careers_url: https://careers.adobe.com/us/en/search-results?keywords=machine%20learning
+
+  - name: Uber
+    priority: B
+    category: big_tech
+    ats: company_page
+    careers_url: https://www.uber.com/us/en/careers/list/?query=machine%20learning
+
+  - name: Airbnb
+    priority: B
+    category: big_tech
+    ats: greenhouse
+    board_token: airbnb
+
+  # --- SOFTWARE / DATA / CLOUD ---
+  - name: Palantir
+    priority: B
+    category: software_data
+    ats: lever
+    company_slug: palantir
+
+  - name: Datadog
+    priority: B
+    category: software_data
+    ats: greenhouse
+    board_token: datadog
+
+  - name: Snowflake
+    priority: B
+    category: software_data
+    ats: company_page
+    careers_url: https://careers.snowflake.com/us/en/search-results?keywords=machine%20learning
+
+  - name: MongoDB
+    priority: B
+    category: software_data
+    ats: greenhouse
+    board_token: mongodb
+
+  - name: Cloudflare
+    priority: B
+    category: software_data
+    ats: greenhouse
+    board_token: cloudflare
+
+  - name: Confluent
+    priority: B
+    category: software_data
+    ats: smartrecruiters
+    company_id: Confluent
+
+  - name: Elastic
+    priority: B
+    category: software_data
+    ats: greenhouse
+    board_token: elastic
+
+  - name: ServiceNow
+    priority: B
+    category: software_data
+    ats: smartrecruiters
+    company_id: ServiceNow
+
+  - name: Stripe
+    priority: A
+    category: software_data
+    ats: greenhouse
+    board_token: stripe
+
+  - name: Atlassian
+    priority: B
+    category: software_data
+    ats: company_page
+    careers_url: https://www.atlassian.com/company/careers/all-jobs?team=Engineering&search=machine%20learning
+
+  - name: Dropbox
+    priority: B
+    category: software_data
+    ats: greenhouse
+    board_token: dropbox
+
+  - name: Reddit
+    priority: B
+    category: software_data
+    ats: greenhouse
+    board_token: reddit
+
+  # --- FINTECH / FINANCE ---
+  - name: Ramp
+    priority: B
+    category: fintech
+    ats: ashby
+    org_slug: ramp
+
+  - name: JPMorgan Chase
+    priority: B
+    category: fintech
+    ats: company_page
+    careers_url: https://careers.jpmorgan.com/us/en/search-results?keywords=machine%20learning
+
+  - name: Goldman Sachs
+    priority: B
+    category: fintech
+    ats: company_page
+    careers_url: https://hdpc.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=machine%20learning
+
+  - name: Two Sigma
+    priority: A
+    category: fintech
+    ats: smartrecruiters
+    company_id: TwoSigma
+
+  - name: Citadel
+    priority: A
+    category: fintech
+    ats: smartrecruiters
+    company_id: Citadel
+
+  - name: Hudson River Trading
+    priority: A
+    category: fintech
+    ats: smartrecruiters
+    company_id: HudsonRiverTrading
+
+  - name: Jane Street
+    priority: A
+    category: fintech
+    ats: greenhouse
+    board_token: janestreet
+
+  - name: Point72
+    priority: B
+    category: fintech
+    ats: smartrecruiters
+    company_id: Point72
+
+  - name: Visa
+    priority: B
+    category: fintech
+    ats: smartrecruiters
+    company_id: Visa
+
+  - name: Mastercard
+    priority: B
+    category: fintech
+    ats: smartrecruiters
+    company_id: Mastercard
+
+  # --- HEALTHCARE AI / MEDICAL AI ---
+  - name: Abridge
+    priority: A
+    category: healthcare_ai
+    ats: ashby
+    org_slug: abridge
+
+  - name: Tempus
+    priority: A
+    category: healthcare_ai
+    ats: smartrecruiters
+    company_id: Tempus
+
+  - name: Viz.ai
+    priority: A
+    category: healthcare_ai
+    ats: smartrecruiters
+    company_id: Vizai
+
+  - name: Rad AI
+    priority: A
+    category: healthcare_ai
+    ats: ashby
+    org_slug: radai
+
+  - name: Aidoc
+    priority: A
+    category: healthcare_ai
+    ats: smartrecruiters
+    company_id: Aidoc
+
+  - name: PathAI
+    priority: A
+    category: healthcare_ai
+    ats: greenhouse
+    board_token: pathai
+
+  - name: Paige
+    priority: A
+    category: healthcare_ai
+    ats: smartrecruiters
+    company_id: Paige
+
+  - name: Natera
+    priority: B
+    category: healthcare_ai
+    ats: greenhouse
+    board_token: natera
+
+  - name: Qure.ai
+    priority: B
+    category: healthcare_ai
+    ats: smartrecruiters
+    company_id: Qure
+
+  - name: Flywheel
+    priority: B
+    category: healthcare_ai
+    ats: smartrecruiters
+    company_id: Flywheel
+
+  - name: Epic
+    priority: B
+    category: healthcare_ai
+    ats: company_page
+    careers_url: https://careers.epic.com/jobs/?keyword=machine%20learning
+
+  - name: GE HealthCare
+    priority: B
+    category: healthcare_ai
+    ats: company_page
+    careers_url: https://careers.gehealthcare.com/global/en/search-results?keywords=machine%20learning
+
+  - name: Siemens Healthineers
+    priority: B
+    category: healthcare_ai
+    ats: smartrecruiters
+    company_id: SiemensHealthineers
+
+  - name: Philips
+    priority: B
+    category: healthcare_ai
+    ats: company_page
+    careers_url: https://www.careers.philips.com/global/en/search-results?keywords=machine%20learning
+
+  - name: EvolutionIQ
+    priority: B
+    category: healthcare_ai
+    ats: greenhouse
+    board_token: evolutioniq
+
+  # --- NYC / HIGH-GROWTH STARTUPS ---
+  - name: WireScreen
+    priority: C
+    category: nyc_startup
+    ats: company_page
+    careers_url: https://www.wirescreen.ai/careers
+
+  - name: Edra
+    priority: C
+    category: nyc_startup
+    ats: company_page
+    careers_url: https://edra.ai/careers
+
+  - name: Sandbar
+    priority: C
+    category: nyc_startup
+    ats: company_page
+    careers_url: https://www.sandbar.ai/careers
+
+  - name: Sciemo
+    priority: C
+    category: nyc_startup
+    ats: company_page
+    careers_url: https://sciemo.io/careers
+
+  - name: Cinder
+    priority: C
+    category: nyc_startup
+    ats: company_page
+    careers_url: https://cinder.co/careers
+
+  - name: Asymptote Labs
+    priority: C
+    category: nyc_startup
+    ats: company_page
+    careers_url: https://asymptotelabs.com/careers
+
+  - name: Octaura
+    priority: C
+    category: nyc_startup
+    ats: company_page
+    careers_url: https://octaura.com/about#careers
+
+  - name: Enigma
+    priority: C
+    category: nyc_startup
+    ats: greenhouse
+    board_token: enigmaio
+
+  - name: Patreon
+    priority: C
+    category: nyc_startup
+    ats: ashby
+    org_slug: patreon
