@@ -38,10 +38,10 @@ def test_create_excel_with_jobs(tmp_path: Path):
     wb = load_workbook(saved)
     ws = wb.active
     assert [cell.value for cell in ws[1]] == COLUMNS
-    assert ws.cell(row=2, column=1).value == "Anthropic"
-    assert ws.cell(row=2, column=7).value == "New York, NY"
-    assert ws.cell(row=2, column=8).value == date.today().isoformat()
-    assert ws.cell(row=2, column=10).value in ("", None)
+    assert ws.cell(row=2, column=2).value == "Anthropic"
+    assert ws.cell(row=2, column=8).value == "New York, NY"
+    assert ws.cell(row=2, column=9).value == date.today().isoformat()
+    assert ws.cell(row=2, column=11).value in ("", None)
 
 
 def test_append_skips_duplicate_urls(tmp_path: Path):
@@ -65,7 +65,7 @@ def test_experience_needed_column(tmp_path: Path):
     append_jobs_to_excel(path, [job])
 
     wb = load_workbook(path)
-    assert wb.active.cell(row=2, column=6).value == "5+ years"
+    assert wb.active.cell(row=2, column=7).value == "5+ years"
 
 
 def test_rebuild_excel_from_all_qualifying_jobs(tmp_path: Path):
@@ -106,7 +106,7 @@ def test_skills_missing_column(tmp_path: Path):
     append_jobs_to_excel(path, [job])
 
     wb = load_workbook(path)
-    skills = wb.active.cell(row=2, column=9).value
+    skills = wb.active.cell(row=2, column=10).value
     assert skills
     assert "Kubernetes" in skills or "Java" in skills
 
@@ -117,4 +117,4 @@ def test_unknown_salary_shown(tmp_path: Path):
     append_jobs_to_excel(path, [job])
 
     wb = load_workbook(path)
-    assert wb.active.cell(row=2, column=4).value == "Not listed"
+    assert wb.active.cell(row=2, column=5).value == "Not listed"

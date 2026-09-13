@@ -458,21 +458,23 @@ def _years_required_sort_key(job: JobRecord) -> tuple[int, int]:
     return (0, years)
 
 
-def sort_jobs(jobs: list[JobRecord]) -> list[JobRecord]:
-    """Sort jobs by new status, score, experience needed, compensation, company priority."""
-    priority_order = {"A": 0, "B": 1, "C": 2, "D": 3}
+def sort_jobs(jobs: list[JobRecord], cfg: AppConfig | None = None) -> list[JobRecord]:
+    """Sort jobs by search priority tier, match score, and experience needed."""
+    company_order = {"A": 0, "B": 1, "C": 2, "D": 3}
 
     def sort_key(job: JobRecord) -> tuple:
+        tier = getattr(job, "search_priority_tier", 99) or 99
         is_new = 0 if job.status.value == "NEW" else 1
         comp = job.salary_max or job.salary_min or 0
         exp_bucket, exp_years = _years_required_sort_key(job)
         return (
+            tier,
             is_new,
             -job.match_score,
             exp_bucket,
             exp_years,
+            company_order.get(job.company_priority, 9),
             -comp,
-            priority_order.get(job.company_priority, 9),
         )
 
     return sorted(jobs, key=sort_key)

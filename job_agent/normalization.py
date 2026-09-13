@@ -166,37 +166,31 @@ def should_include_job(
     location: str | None,
     remote_type: RemoteType,
     description: str = "",
+    company: str = "",
     cfg: AppConfig,
 ) -> bool:
-    """Return True if a job passes role, US-location, and experience filters."""
-    from job_agent.scoring import exceeds_max_experience_requirement
+    """Return True if a job passes ingestion-time role, US, and experience filters."""
+    from job_agent.models import JobRecord
+    from job_agent.priority import compute_priority_tier
 
-    if is_excluded_role(title, description, cfg):
-        return False
-    if not is_usa_job_eligible(location, remote_type, description, title):
-        return False
-    combined = f"{title} {description}"
-    return not exceeds_max_experience_requirement(combined, cfg.max_allowed_job_years)
+    stub = JobRecord(
+        company=company,
+        title=title,
+        url="https://example.com",
+        application_url="https://example.com",
+        source="filter",
+        location=location,
+        remote_type=remote_type,
+        description=description,
+    )
+    return compute_priority_tier(stub, cfg) > 0
 
 
 def filter_qualifying_jobs(jobs, cfg: AppConfig):
-    """Apply role and US-location filters to stored job records."""
-    from job_agent.models import JobRecord
+    """Apply priority tiers and return sorted eligible jobs."""
+    from job_agent.priority import filter_and_rank_jobs
 
-    filtered: list[JobRecord] = []
-    for job in jobs:
-        remote_type = job.remote_type
-        if isinstance(remote_type, str):
-            remote_type = RemoteType(remote_type)
-        if should_include_job(
-            title=job.title,
-            location=job.location,
-            remote_type=remote_type,
-            description=job.description,
-            cfg=cfg,
-        ):
-            filtered.append(job)
-    return filtered
+    return filter_and_rank_jobs(jobs, cfg)
 
 
 def detect_remote_type(location: str | None, description: str = "") -> RemoteType:
@@ -320,6 +314,7 @@ def normalize_raw_job(raw: RawJob, cfg: AppConfig) -> RawJob | None:
         location=raw.location,
         remote_type=raw.remote_type,
         description=raw.description,
+        company=raw.company,
         cfg=cfg,
     ):
         return None

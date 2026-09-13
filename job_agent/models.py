@@ -124,6 +124,8 @@ class JobRecord:
     application_url_status: str = "unverified"
     company_priority: str = "D"
     employment_type: str | None = None
+    search_priority_tier: int = 0
+    search_priority_label: str = ""
     id: int | None = None
     date_first_seen: datetime | None = None
     date_last_seen: datetime | None = None

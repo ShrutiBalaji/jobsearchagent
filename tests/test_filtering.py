@@ -198,6 +198,7 @@ def test_should_include_job_excludes_sales_roles(config):
             title="Presales Customer Engineer (Sydney)",
             location="Hybrid",
             remote_type=RemoteType.HYBRID,
+            company="Cloudflare",
             cfg=config,
         )
         is False

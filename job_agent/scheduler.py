@@ -150,8 +150,7 @@ class JobAgentPipeline:
             self.config.minimum_match_score, **date_filter
         )
         all_qualifying = filter_qualifying_jobs(all_qualifying, self.config)
-        new_jobs = filter_qualifying_jobs(new_jobs, self.config)
-        all_qualifying = sort_jobs(all_qualifying)
+        new_jobs = [j for j in all_qualifying if j.status.value == "NEW"]
 
         report_date = today_utc()
         html, text, json_data = generate_report(new_jobs, all_qualifying, summary, report_date)

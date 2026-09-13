@@ -38,6 +38,9 @@ class AppConfig:
     candidate_years_experience: int = 5
     max_preferred_years: int = 5
     max_allowed_job_years: int = 5
+    tier1_max_years: int = 3
+    tier2_max_years: int = 3
+    tier3_max_years: int = 5
     reject_senior_unless_flexible: bool = True
     candidate_skills: list[str] = field(default_factory=list)
     candidate_skills_text: str = ""

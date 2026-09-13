@@ -10,7 +10,6 @@ from job_agent.database import Database
 from job_agent.excel_export import rebuild_jobs_in_excel
 from job_agent.normalization import filter_qualifying_jobs
 from job_agent.scheduler import JobAgentPipeline
-from job_agent.scoring import sort_jobs
 from job_agent.utils.logging import setup_logging
 
 
@@ -35,15 +34,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 def cmd_export_excel(config) -> int:
     db = Database(config.database_path)
-    jobs = sort_jobs(
-        filter_qualifying_jobs(
-            db.get_all_qualifying_jobs(
-                config.minimum_match_score,
-                max_age_days=config.max_job_age_days,
-                require_posting_date=config.require_posting_date,
-            ),
-            config,
-        )
+    jobs = filter_qualifying_jobs(
+        db.get_all_qualifying_jobs(
+            config.minimum_match_score,
+            max_age_days=config.max_job_age_days,
+            require_posting_date=config.require_posting_date,
+        ),
+        config,
     )
     if not jobs:
         print("No qualifying jobs found in the database to export.")

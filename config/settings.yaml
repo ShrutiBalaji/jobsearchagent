@@ -65,8 +65,11 @@ default_company_priority: D
 # ~5 years AI/ML: ML research intern (2021–2023), medical CV research (2023–2025),
 # AI Engineer roles (2025–present), plus MS Data Science (UMass Dartmouth).
 candidate_years_experience: 5
-max_preferred_years: 5  # upper bound on job year requirements still considered a good fit
-max_allowed_job_years: 5  # hard exclude jobs requiring more than this many years
+max_preferred_years: 5
+max_allowed_job_years: 5  # hard exclude jobs requiring more than 5 years
+tier1_max_years: 3  # target companies: junior, unlisted years, or <= 3 years
+tier2_max_years: 3  # full US market: <= 3 years or unlisted years
+tier3_max_years: 5  # target companies + US market: <= 5 years
 reject_senior_unless_flexible: true
 
 # Compensation unknown handling — allow through when match score >= minimum_match_score

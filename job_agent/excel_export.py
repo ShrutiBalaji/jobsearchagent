@@ -17,6 +17,7 @@ from job_agent.utils.salary import ParsedSalary, format_compensation
 logger = logging.getLogger("job_agent.excel")
 
 COLUMNS = [
+    "Priority",
     "Company name",
     "URL to apply",
     "Role name",
@@ -29,7 +30,7 @@ COLUMNS = [
     "Applied",
 ]
 
-URL_COLUMN = 2
+URL_COLUMN = 3
 HEADER_FONT = Font(bold=True)
 
 
@@ -114,6 +115,26 @@ def _migrate_header(ws: Worksheet) -> None:
         for row in range(2, ws.max_row + 1):
             ws.cell(row=row, column=9, value="")
         _style_header(ws)
+        header = [cell.value for cell in ws[1]]
+
+    without_priority = [
+        "Company name",
+        "URL to apply",
+        "Role name",
+        "Salary",
+        "Match score",
+        "Experience needed",
+        "Location",
+        "Date posted",
+        "Skill missing",
+        "Applied",
+    ]
+    if header == without_priority:
+        ws.insert_cols(1)
+        ws.cell(row=1, column=1, value="Priority")
+        for row in range(2, ws.max_row + 1):
+            ws.cell(row=row, column=1, value="")
+        _style_header(ws)
         return
 
     ws.delete_rows(1)
@@ -176,8 +197,17 @@ def _skills_missing_text(job: JobRecord) -> str:
     return format_skills_missing(combined, load_config())
 
 
+def _priority_text(job: JobRecord) -> str:
+    if job.search_priority_label:
+        return job.search_priority_label
+    if job.search_priority_tier:
+        return f"Tier {job.search_priority_tier}"
+    return ""
+
+
 def _job_row(job: JobRecord) -> list:
     return [
+        _priority_text(job),
         job.company,
         job.application_url or job.url,
         job.title,
